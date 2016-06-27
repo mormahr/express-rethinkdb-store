@@ -13,7 +13,7 @@
 		"url": "git+https://github.com/mormahr/express-rethinkdb-store.git"
 	},
 	"author": "Moritz Mahringer",
-	"license": "ISC",
+	"license": "GPLv3",
 	"bugs": {
 		"url": "https://github.com/mormahr/express-rethinkdb-store/issues"
 	},
