@@ -74,13 +74,24 @@ export default function (session) {
 
 			const sessionToStore = {
 				id: sid,
-				expires: Date.now() + (sess.cookie.originalMaxAge || this.sessionTimeout),
+				expires: this._getTTL(sess),
 				data: sess
 			}
 
 			await r.table(this.table).insert(sessionToStore, {
 				conflict: "replace"
 			})
+		}
+
+		/**
+		 * Compute TTL for given session
+		 *
+		 * @param {Object }sess
+		 * @returns {Number} TTL
+		 * @private
+		 */
+		_getTTL(sess) {
+			return Date.now() + (sess.cookie.originalMaxAge || this.sessionTimeout)
 		}
 
 		@callback_decorator
