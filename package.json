@@ -1,34 +1,35 @@
 {
-  "name": "express-rethinkdb-store",
-  "version": "0.1.0",
-  "description": "A session store with rethinkdb backing",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/babel -d ./distribution ./source -s"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mormahr/express-rethinkdb-store.git"
-  },
-  "author": "Moritz Mahringer",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mormahr/express-rethinkdb-store/issues"
-  },
-  "homepage": "https://github.com/mormahr/express-rethinkdb-store#readme",
-  "devDependencies": {
-    "babel-cli": "^6.10.1",
-    "babel-eslint": "^6.1.0",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "babel-plugin-transform-object-rest-spread": "^6.8.0",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-stage-3": "^6.11.0",
-    "eslint": "^2.13.1"
-  },
-  "dependencies": {
-    "array.from": "^1.0.2",
-    "bluebird": "^3.4.1",
-    "rethinkdbdash": "^2.3.12"
-  }
+	"name": "express-rethinkdb-store",
+	"version": "0.1.0-alpha.1",
+	"description": "A session store with rethinkdb backing",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "./node_modules/.bin/babel -d ./distribution ./source -s",
+		"prepublish": "npm run-script build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mormahr/express-rethinkdb-store.git"
+	},
+	"author": "Moritz Mahringer",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/mormahr/express-rethinkdb-store/issues"
+	},
+	"homepage": "https://github.com/mormahr/express-rethinkdb-store#readme",
+	"devDependencies": {
+		"babel-cli": "^6.10.1",
+		"babel-eslint": "^6.1.0",
+		"babel-plugin-transform-decorators-legacy": "^1.3.4",
+		"babel-plugin-transform-object-rest-spread": "^6.8.0",
+		"babel-preset-es2015": "^6.9.0",
+		"babel-preset-stage-3": "^6.11.0",
+		"eslint": "^2.13.1"
+	},
+	"dependencies": {
+		"array.from": "^1.0.2",
+		"bluebird": "^3.4.1",
+		"rethinkdbdash": "^2.3.12"
+	}
 }
