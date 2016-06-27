@@ -16,19 +16,32 @@ export default function (session) {
 			super()
 
 			options = options || {}
-			const r = this.r = rethinkdbdash(options.connectionOptions)
+			this.r = rethinkdbdash(options.connectionOptions)
 			this.emit("connect")
 
 			this.sessionTimeout = options.sessionTimeout || 86400000 // 1 day
 			this.table = options.table || "session"
 
 			setInterval(() => {
-				r.table(this.table).filter(
+				this.flush()
+			}, options.flushInterval || 60000)
+		}
+
+		/**
+		 * Delete expired sessions
+		 *
+		 * @returns {Promise}
+		 */
+		async flush() {
+			const r = this.r
+
+			try {
+				await r.table(this.table).filter(
 					r.row("expires").lt(r.now().toEpochTime().mul(1000))
 				).delete()
-				.catch(error => console.error(error))
-
-			}, options.flushInterval || 60000 )
+			} catch (error) {
+				console.error(error)
+			}
 		}
 
 		@callback_decorator
