@@ -17,7 +17,7 @@ export default function (target, property, descriptor) {
 		 * @type {Array}
 		 */
 		const _arguments = from(arguments)
-		const args_length = typeof _arguments[_arguments.length - 1] == "function" ? _arguments.length - 1 : _arguments.length
+		const args_length = old.length
 
 		/**
 		 *
