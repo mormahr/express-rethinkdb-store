@@ -38,3 +38,6 @@ jspm_packages
 
 # build files
 distribution
+
+# IDE
+.idea
