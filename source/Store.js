@@ -6,7 +6,8 @@ export default function (session) {
 		constructor(options) {
 			super()
 
-			const r = this.r = rethinkdbdash(options.databaseOptions)
+			options = options || {}
+			const r = this.r = rethinkdbdash(options.connectionOptions)
 			this.emit("connect")
 
 			this.sessionTimeout = options.sessionTimeout || 86400000 // 1 day
