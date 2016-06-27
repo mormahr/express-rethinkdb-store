@@ -54,8 +54,7 @@ export default function (session) {
 			}
 
 			await r.table(this.table).insert(sessionToStore, {
-				conflict: "replace",
-				returnChanges: true
+				conflict: "replace"
 			})
 		}
 
