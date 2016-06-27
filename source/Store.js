@@ -49,7 +49,7 @@ export default function (session) {
 
 			const sessionToStore = {
 				id: sid,
-				expires: new Date().getTime() + (sess.cookie.originalMaxAge || this.sessionTimeout),
+				expires: Date.now() + (sess.cookie.originalMaxAge || this.sessionTimeout),
 				data: sess
 			}
 
