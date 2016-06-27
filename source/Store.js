@@ -3,6 +3,15 @@ import callback_decorator from "./callback_decorator"
 
 export default function (session) {
 	class Store extends session.Store {
+
+		/**
+		 *
+		 * @param {Object} options Options
+		 * @param {Object} [options.connectionOptions] {@link https://www.rethinkdb.com/api/javascript/#connect}
+		 * @param {String} [options.table = "session"] Session table
+		 * @param {Number} [options.sessionTimeout = 86400000] Session Timeout in milliseconds
+		 * @param {Number} [options.flushInterval = 60000] Interval to delete expired sessions from database
+		 */
 		constructor(options) {
 			super()
 
