@@ -23,7 +23,7 @@ export default function (session) {
 			this.table = options.table || "session"
 
 			setInterval(() => {
-				r.filter(
+				r.table(this.table).filter(
 					r.row("expires").lt(r.now().toEpochTime().mul(1000))
 				).delete()
 				.catch(error => console.error(error))
