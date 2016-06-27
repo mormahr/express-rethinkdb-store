@@ -1,1 +1,1 @@
-module.exports = require("./distribution/Store.js")
+module.exports = require("./distribution/RethinkStore.js")

@@ -2,7 +2,7 @@ import rethinkdbdash from "rethinkdbdash"
 import callback_decorator from "./callback_decorator"
 
 export default function (session) {
-	class Store extends session.Store {
+	class RethinkStore extends session.Store {
 
 		/**
 		 *
@@ -102,5 +102,5 @@ export default function (session) {
 		}
 	}
 
-	return Store
+	return RethinkStore
 }
