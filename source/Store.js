@@ -36,6 +36,18 @@ export default function (session) {
 			const r = this.r
 
 			const session_data = await r.table(this.table).get(sid)
+			// provide a default for the filter `sess("expires")` operation
+			.default({expires: 0})
+			// use session or default to determine if session is expired
+			.do(sess => r.branch(
+				// condition for expiry
+				sess("expires").lt(r.now().toEpochTime().mul(1000)),
+				// if expired -> delete session and "return" false
+				r.table(this.table).get(sid).delete().do(() => false),
+				// if not expired -> return the session
+				sess
+			))
+
 			if (session_data && session_data.data) {
 				return session_data.data
 			} else {
