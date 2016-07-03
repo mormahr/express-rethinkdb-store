@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "./node_modules/.bin/babel -d ./distribution ./source -s",
+		"build": "rm -rf ./distribution && ./node_modules/.bin/babel -d ./distribution ./source -s",
 		"prepublish": "npm run-script build"
 	},
 	"repository": {
