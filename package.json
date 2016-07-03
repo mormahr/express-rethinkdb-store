@@ -32,6 +32,6 @@
 		"rethinkdbdash": "^2.3.12"
 	},
 	"peerDependencies": {
-		"express-session": "^1.14.0"
+		"express-session": "^1.10.0"
 	}
 }
