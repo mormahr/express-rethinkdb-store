@@ -1,10 +1,19 @@
 # express-rethinkdb-store
 
+[![npm version](https://badge.fury.io/js/express-rethinkdb-store.svg)](https://badge.fury.io/js/express-rethinkdb-store)
+
 A (currently basic) implementation of a [RethinkDB](https://www.rethinkdb.com) [Session](https://github.com/expressjs/session) Store.
 
 It's a complete rewrite based on [`express-session-rethinkdb`](https://github.com/armenfilipetyan/express-session-rethinkdb).
 
 ## Usage
+
+Install and save Package with
+```bash
+npm install --save express-rethinkdb-store
+```
+
+then, assuming your `express` app is in `app`
 
 ```javascript
 const session = require("express-session")
