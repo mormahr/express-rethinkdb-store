@@ -1,5 +1,4 @@
 import Promise from "bluebird"
-import from from "array.from"
 
 function noop() {
 }
@@ -16,17 +15,16 @@ export default function (target, property, descriptor) {
 		/**
 		 * @type {Array}
 		 */
-		const _arguments = from(arguments)
 		const args_length = old.length
 
 		/**
 		 *
 		 * @type {Function}
 		 */
-		const fn = _arguments[args_length] || noop
+		const fn = arguments[args_length] || noop
 
 		// Call the old function
-		let promise = old.apply(this, _arguments.slice(0, args_length))
+		let promise = old.apply(this, Array.prototype.slice.call(arguments, 0, args_length))
 
 		// Cast to bluebird promise
 		promise = Promise.resolve(promise)
