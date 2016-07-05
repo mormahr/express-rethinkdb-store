@@ -17,7 +17,7 @@ then, assuming your `express` app is in `app`
 
 ```javascript
 const session = require("express-session")
-const RethinkStore = require("express-rethinkdb-store")(session)
+const RethinkStore = require("express-rethinkdb-store")
 const store = new RethinkStore()
 
 app.use(session({
@@ -28,9 +28,6 @@ app.use(session({
 	saveUninitialized: false
 }))
 ```
-**Be aware that `RethinkStore` is initialized with  `require("express-rethinkdb-store")(session)`**
-
-So you have to call the required function with your session to get the RethinkStore class
 
 ## Features
 
