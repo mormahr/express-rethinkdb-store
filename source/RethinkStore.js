@@ -75,11 +75,11 @@ export default class RethinkStore extends session.Store {
 		const sessionToStore = {
 			id: sid,
 			expires: this._getTTL(sess),
-			data: sess
+			data: sess,
 		}
 
 		await r.table(this.table).insert(sessionToStore, {
-			conflict: "replace"
+			conflict: "replace",
 		})
 	}
 

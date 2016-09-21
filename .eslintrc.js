@@ -61,7 +61,7 @@ module.exports = {
 		],
 		"comma-dangle": [
 			"warn",
-			"only-multiline"
+			"always-multiline"
 		],
 	}
 };
